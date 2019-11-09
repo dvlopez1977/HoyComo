@@ -6,6 +6,7 @@ import random
 class PlanDeComidas:
 	Recetas = Recetario.Recetario([])
 	Plan = []
+	ListaCompra = []
 	Comensales = 4
 	
 	def __init__(self, recetas):
@@ -57,3 +58,23 @@ class PlanDeComidas:
 			# anhadimos la receta al plan
 			self.Plan.append(planDia)
 			nDia = nDia + 1
+			
+	def anadeIngredientes(self, lista):
+		for i in range(len(lista)):
+			j =0
+			nIngredientes = len(self.ListaCompra)
+			while j < nIngredientes and lista[i].Ingrediente != self.ListaCompra[j].Ingrediente :
+				j += 1
+			if j < nIngredientes and lista[i].Ingrediente == self.ListaCompra[j].Ingrediente :
+				# si el ingrediente ya esta en la lista de la compra anadimos la cantidad
+				self.ListaCompra[j].Cantidad += lista[i].Cantidad
+			else:
+				# si el ingrediente no esta en la lista lo anadimos al final
+				self.ListaCompra.append(lista[i])
+		
+	def CrearListaDeCompra(self):
+		self.listaCompra = []
+		for i in range(0, len(self.Plan) - 1):
+			self.anadeIngredientes(self.Plan[i].dameIngredientes())
+			
+			

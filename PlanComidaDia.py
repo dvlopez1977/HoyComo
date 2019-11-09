@@ -14,5 +14,10 @@ class PlanComidaDia:
 		self.PrincipalCena = Receta.Receta("", [], [], [], [], 0)
 		self.GuarnicionCena = Receta.Receta("", [], [], [], [], 0)
 	
+	def dameIngredientes(self):
+		lIngredientes = self.Entrante.Ingredientes + self.PrincipalComida.Ingredientes + self.GuarnicionComida.Ingredientes + self.PrincipalCena.Ingredientes + self.GuarnicionCena.Ingredientes
+		return lIngredientes
+		
+	
 	
 	

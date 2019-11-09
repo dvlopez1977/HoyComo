@@ -22,6 +22,7 @@ print("----")
 planazo = PlanDeComidas.PlanDeComidas(recetitas)
 #planazo = PlanDeComidas.PlanDeComidas(LectorRecetas.DameRecetario())
 print("Intento crear el plan de comidas")
+
 planazo.CrearPlanDeComidas("Noviembre")
 for i in range(len(planazo.Plan)):
 	print(i+1, "Entrante: ", planazo.Plan[i].Entrante.Titulo)
@@ -29,12 +30,10 @@ for i in range(len(planazo.Plan)):
 	print(i+1, "Guarnicion: ", planazo.Plan[i].GuarnicionComida.Titulo)
 	print(i+1, "Cena: ", planazo.Plan[i].PrincipalCena.Titulo)
 	print(i+1, "Guarnicion cena: ", planazo.Plan[i].GuarnicionCena.Titulo)
-planazo.CrearPlanDeComidas("Abril")
-for i in range(len(planazo.Plan)):
-	print(i+1, "Entrante: ", planazo.Plan[i].Entrante.Titulo)
-	print(i+1, "Principal: ", planazo.Plan[i].PrincipalComida.Titulo)
-	print(i+1, "Guarnicion: ", planazo.Plan[i].GuarnicionComida.Titulo)
-	print(i+1, "Cena: ", planazo.Plan[i].PrincipalCena.Titulo)
-	print(i+1, "Guarnicion cena: ", planazo.Plan[i].GuarnicionCena.Titulo)
 
-recetitas.imprime
+planazo.CrearListaDeCompra()
+for i in range(len(planazo.ListaCompra)):
+	print(i+1, "Ingrediente: ", planazo.ListaCompra[i].Ingrediente)
+	print(i+1, "Principal: ", planazo.ListaCompra[i].Cantidad)
+	print(i+1, "Guarnicion: ", planazo.ListaCompra[i].Unidad)
+
