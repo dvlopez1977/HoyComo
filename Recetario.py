@@ -1,7 +1,6 @@
 import Receta
 
 class Recetario:
-	lRecetas = []
 
 	def __init__ (self, recetas):
 		self.lRecetas = recetas
@@ -21,5 +20,5 @@ class Recetario:
 	def imprime(self):
 		print("Imprimiendo las recetas")
 		for i in range(0, len(self.lRecetas)-1):
-			self.lRecetas[i].imprime
+			self.lRecetas[i].imprime()
 		

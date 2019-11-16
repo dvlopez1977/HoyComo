@@ -1,11 +1,5 @@
 
 class Receta:
-	Titulo = ""
-	Temporadas = []
-	Ingredientes = []
-	Pasos = []
-	Tipos = []
-	Raciones = 0
 	
 	def __init__(self, titulo, temporadas, ingredientes, pasos, tipos, raciones):
 		self.Titulo = titulo
@@ -16,4 +10,4 @@ class Receta:
 		self.Raciones = raciones
 	
 	def imprime(self):
-		print (self.Titulo + " " + self.Temporadas + " " + self.Ingredientes + " " + self.Pasos + " " + self.Tipos + " " + self.Raciones)
+		print (self.Titulo, self.Temporadas ,self.Ingredientes,self.Pasos,self.Tipos,self.Raciones)

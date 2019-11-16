@@ -5,8 +5,8 @@ import csv
 
 
 class InterfazRecetario:
-	cRuta = ""
-	lasRecetas = Recetario.Recetario([])
+
+
 	
 	def __init__(self, ruta):
 		self.cRuta = ruta
@@ -28,7 +28,7 @@ class InterfazRecetario:
 		lcsvIngredientes = list(ReaderIngredientes)
 		lIngredientes = []
 		for i in range(0, len(lcsvIngredientes)-1):
-			ingrediente = Ingrediente.Ingrediente(lcsvIngredientes[i][0],lcsvIngredientes[i][1],lcsvIngredientes[i][2])
+			ingrediente = Ingrediente.Ingrediente(lcsvIngredientes[i][0],float(lcsvIngredientes[i][1]),lcsvIngredientes[i][2])
 			lIngredientes.append(ingrediente)
 		return lIngredientes
 			
