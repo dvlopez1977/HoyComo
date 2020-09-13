@@ -5,7 +5,7 @@ import Ingrediente
 import random
 
 class PlanDeComidas:
-    
+
     def __init__(self, recetas):
         self.Recetas = recetas
         self.Plan = []
@@ -13,7 +13,7 @@ class PlanDeComidas:
         self.Comensales = 4
     def SeleccionaPlato(self, lPlatos):
         return lPlatos[random.randint(0, len(lPlatos)-1)]
-    
+
     def CalculaDiasMes(self, Mes):
         lMeses31 = ["Enero", "Marzo", "Mayo", "Julio", "Agosto", "Octubre", "Diciembre"]
         nDias = 30
@@ -22,12 +22,12 @@ class PlanDeComidas:
         elif Mes in lMeses31:
             nDias = 31
         return nDias
-        
+
     def CalculaTemporadaMes(self, Mes):
         Primavera = ["Abril", "Mayo", "Junio"]
         Verano = ["Julio", "Agosto", "Septiembre"]
         Otono = ["Octubre", "Noviembre", "Diciembre"]
-        
+
         temporada = "Invierno"
         if Mes in Primavera:
             temporada = "Primavera"
@@ -36,7 +36,7 @@ class PlanDeComidas:
         elif Mes in Otono:
             temporada = "Otono"
         return temporada
-            
+
     def CrearPlanDeComidas(self, Mes):
         self.Plan = []
         temporada = self.CalculaTemporadaMes(Mes)
@@ -57,7 +57,7 @@ class PlanDeComidas:
             # anhadimos la receta al plan
             self.Plan.append(planDia)
             nDia = nDia + 1
-            
+
     def anadeIngredientes(self, lista):
 		# para cada ingrediente de la lista
         for i in range(len(lista)):
@@ -67,7 +67,7 @@ class PlanDeComidas:
 #            print ("Busco ingrediente:", lista[i].Ingrediente,",",lista[i].Cantidad)
             while j < nIngredientes and lista[i].Ingrediente != self.ListaCompra[j].Ingrediente :
 #				print (lista[i].Ingrediente," != ", self.ListaCompra[j].Ingrediente)
-				j += 1
+                j += 1
             if j < nIngredientes and lista[i].Ingrediente == self.ListaCompra[j].Ingrediente :
                 # si el ingrediente ya esta en la lista de la compra anadimos la cantidad
                 print (lista[i].Ingrediente, "==", self.ListaCompra[j].Ingrediente )
@@ -80,7 +80,7 @@ class PlanDeComidas:
                 nuevoIngrediente = Ingrediente.Ingrediente(lista[i].Ingrediente, lista[i].Cantidad, lista[i].Medida)
                 self.ListaCompra.append(nuevoIngrediente)
 
-        
+
     def CrearListaDeCompra(self):
         print ("Voy a crear la lista de la compra")
         nIngredientes = 0

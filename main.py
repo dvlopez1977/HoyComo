@@ -24,12 +24,12 @@ planazo = PlanDeComidas.PlanDeComidas(recetitas)
 print("Intento crear el plan de comidas")
 
 planazo.CrearPlanDeComidas("Junio")
-#for i in range(len(planazo.Plan)):
-#   print(i+1, "Entrante: ", planazo.Plan[i].Entrante.Titulo)
-#   print(i+1, "Principal: ", planazo.Plan[i].PrincipalComida.Titulo)
-#   print(i+1, "Guarnicion: ", planazo.Plan[i].GuarnicionComida.Titulo)
-#   print(i+1, "Cena: ", planazo.Plan[i].PrincipalCena.Titulo)
-#   print(i+1, "Guarnicion cena: ", planazo.Plan[i].GuarnicionCena.Titulo)
+for i in range(len(planazo.Plan)):
+   print(i+1, "Entrante: ", planazo.Plan[i].Entrante.Titulo)
+   print(i+1, "Principal: ", planazo.Plan[i].PrincipalComida.Titulo)
+   print(i+1, "Guarnicion: ", planazo.Plan[i].GuarnicionComida.Titulo)
+   print(i+1, "Cena: ", planazo.Plan[i].PrincipalCena.Titulo)
+   print(i+1, "Guarnicion cena: ", planazo.Plan[i].GuarnicionCena.Titulo)
 
 planazo.CrearListaDeCompra()
 nIngredientes = range(len(planazo.listaCompra))
